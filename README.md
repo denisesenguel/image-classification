@@ -1,8 +1,19 @@
 image-classification
 ==============================
 
-Building a first base image recognition model for land use based on Sentinel2 satellite images and available categorizations
-- 
+Building a first base convolutional neural network model for land use classification based on 
+(EUROSAT Sentinel2 satellite imagery)[https://github.com/phelber/eurosat]. Available Classes are..
+- Industrial Buildings
+- Residential Buildings
+- Annual Crop
+- Permanent Crop
+- River
+- Sea & Lake
+- Herbaceous Vegetation
+- Highway
+- Pasture (Weide)
+- Forest
+The dataset in total contains 27.000 geo-referenced and classified images.
 
 # Local Setup
 

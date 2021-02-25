@@ -12,12 +12,15 @@ def downloadRGB():
 
     return path
 
-def preprocessImages(path, batch_size, img_height, img_width):
+def preprocessImages(batch_size=100, img_height=64, img_width=64):
+
+    path = downloadRGB()
 
     data_dict = dict()
 
     for type in ("training", "validation"):
 
+        # set seed for split?
         data_dict[type] = tf.keras.preprocessing.image_dataset_from_directory(
             directory=path,
             subset=type,

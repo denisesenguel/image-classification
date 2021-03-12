@@ -23,8 +23,12 @@ First-time use
 
 If you've already done so, simply run `conda activate tf`
 
+Currently the code relies on the `tensorflow.keras` function `image_dataset_from_directory` which requires Tensorflow 
+version 2.3.0 or higher, which is currently not yet supported by Anaconda. 
+For now ignore any conda envs and use your local Python3 installation addi the most recent Tensorflow version by 
+simply running `pip3 install tensorflow`. If Anaconda does not support 2.3.+ soon we can still switch to standard pip envs.
 
-Project Organization
+# Project Organization
 ------------
 
     ├── LICENSE

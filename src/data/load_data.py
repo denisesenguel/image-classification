@@ -23,7 +23,7 @@ def downloadRGB():
     return path_extracted
 
 
-def preprocessImages(batch_size=100, img_height=64, img_width=64):
+def preprocessImages(img_height, img_width, batch_size=100):
 
     path = pathlib.Path.cwd() / "data/raw/EuroSAT_RGB/"
 

@@ -1,14 +1,16 @@
-import numpy as np
 from tensorflow.keras import layers, Sequential
 from src.data.load_data import *
 from src.data.transform import normalize_data
-
+import time
 
 def main():
 
-    data_processed = preprocessImages()
+    img_height = 64
+    img_width = 64
+
+    data_processed = preprocessImages(img_width=img_width, img_height=img_height)
     data_normalized = {
-        "traning":normalize_data(data_processed["training"]),
+        "training":normalize_data(data_processed["training"]),
         "validation":normalize_data(data_processed["validation"])
     }
 
@@ -41,12 +43,17 @@ def main():
 
     model.summary()
 
-    epochs = 10
+    epochs = 20
+
+    # use keras callbacks to get time per epoch, see bookmark in SO
+    begin = time.process_time()
     history = model.fit(
         data_normalized["training"],
         validation_data=data_normalized["validation"],
         epochs=epochs
     )
+    elapsed = time.process_time() - begin
+    print("total time elapsed during model fitting: " + str(round(elapsed, 3)))
 
     return history
 

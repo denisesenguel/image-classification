@@ -55,6 +55,8 @@ def main():
     elapsed = time.process_time() - begin
     print("total time elapsed during model fitting: " + str(round(elapsed, 3)))
 
+    
+
     return history
 
 if __name__ == "__main__":

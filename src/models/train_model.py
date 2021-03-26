@@ -3,7 +3,7 @@ from src.data.load_data import *
 from src.data.transform import normalize_data
 import time
 
-def main():
+def main(filepath="models/"):
 
     img_height = 64
     img_width = 64
@@ -43,7 +43,7 @@ def main():
 
     model.summary()
 
-    epochs = 20
+    epochs = 5
 
     # use keras callbacks to get time per epoch, see bookmark in SO
     begin = time.process_time()
@@ -55,7 +55,7 @@ def main():
     elapsed = time.process_time() - begin
     print("total time elapsed during model fitting: " + str(round(elapsed, 3)))
 
-    
+    model.save(filepath+"example")
 
     return history
 

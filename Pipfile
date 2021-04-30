@@ -9,6 +9,7 @@ tensorflow = "*"
 numpy = "*"
 rioxarray = "*"
 matplotlib = "*"
+requests = "*"
 
 [dev-packages]
 
